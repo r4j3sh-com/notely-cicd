@@ -10,9 +10,9 @@ var ErrNoAuthHeaderIncluded = errors.New("no authorization header included")
 
 // GetAPIKey -
 func GetAPIKey(headers http.Header) (string, error) {
-	authHeader := headers.Get("Authorizations")
+	//authHeader := headers.Get("Authorizations")
 	// Making spelling mistake to check ci
-	//authHeader := headers.Get("Authorization") // Corrected spelling mistake
+	authHeader := headers.Get("Authorization") // Corrected spelling mistake
 	if authHeader == "" {
 		return "", ErrNoAuthHeaderIncluded
 	}
